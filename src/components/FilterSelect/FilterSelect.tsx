@@ -14,8 +14,8 @@ interface FilterSelectProps {
 
 const FilterSelect = ({ label, value, options, onChange }: FilterSelectProps) => {
   return (
-    <div className="flex flex-col gap-2 w-full">
-      <label className="font-body text-[14px] sm:text-[15px] font-semibold text-[#171717]">
+    <div className="gap-2 flex w-full flex-col">
+      <label className="font-body sm:text-[15px] font-semibold text-[14px] text-[#171717]">
         {label}
       </label>
 
@@ -23,7 +23,7 @@ const FilterSelect = ({ label, value, options, onChange }: FilterSelectProps) =>
         <select
           value={value}
           onChange={(event) => onChange(event.target.value)}
-          className="w-full h-14 appearance-none rounded-[10px] border-2 border-[#C6C8DD] bg-white px-4 pr-11 text-[14px] sm:text-[15px] font-body text-[#171717] outline-none transition-all duration-300 ease-in-out focus:border-blue-accent cursor-pointer"
+          className="h-14 bg-white px-4 pr-11 sm:text-[15px] font-body ease-in-out focus:border-blue-accent w-full cursor-pointer appearance-none rounded-[10px] border-2 border-[#C6C8DD] text-[14px] text-[#171717] transition-all duration-300 outline-none"
         >
           {options.map((option) => (
             <option key={option.value} value={option.value}>
@@ -32,7 +32,7 @@ const FilterSelect = ({ label, value, options, onChange }: FilterSelectProps) =>
           ))}
         </select>
 
-        <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-black">
+        <span className="right-4 text-black pointer-events-none absolute top-1/2 -translate-y-1/2">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <path
               d="M6 9L12 15L18 9"

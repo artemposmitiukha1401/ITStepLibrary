@@ -52,25 +52,25 @@ const SOCIAL_LINKS = [
 ];
 
 const Footer = () => (
-  <footer className="w-full bg-blue-accent py-6">
-    <div className="max-w-[1320px] mx-auto w-full px-4 sm:px-6 lg:px-8">
+  <footer className="bg-blue-accent py-6 w-full">
+    <div className="px-4 sm:px-6 lg:px-8 mx-auto w-full max-w-330">
 
-      <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4">
+      <div className="sm:flex-row sm:items-center gap-4 flex flex-col items-center justify-between">
         <Link href="/home"><Image
           src="/logo_light.svg"
           alt="ITStep Logo"
           width={179}
           height={60}
-          className="w-32 sm:w-36 lg:w-[179px] h-auto"
+          className="w-32 sm:w-36 lg:w-44.75 h-auto"
         /></Link>
 
-        <div className="flex items-center gap-3">
+        <div className="gap-3 flex items-center">
           {SOCIAL_LINKS.map((social) => (
             <a
               key={social.label}
               href={social.href}
               aria-label={social.label}
-              className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-[13px] border border-white/25 text-white transition hover:bg-white hover:text-blue-accent"
+              className="h-9 w-9 sm:h-10 sm:w-10 border-white/25 text-white hover:bg-white hover:text-blue-accent flex items-center justify-center rounded-[13px] border transition"
             >
               {social.icon}
             </a>
@@ -79,16 +79,16 @@ const Footer = () => (
       </div>
 
 
-      <div className="mt-4 mb-4 border-t border-white/20" />
+      <div className="mt-4 mb-4 border-white/20 border-t" />
       
       
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-        <p className="text-white/80 text-[13px] sm:text-[14px] font-body font-medium">
+      <div className="sm:flex-row gap-2 sm:text-left flex flex-col items-center justify-between text-center">
+        <p className="text-white/80 sm:text-[14px] font-body font-medium text-[13px]">
           © 2026 STEP IT Academy.&nbsp; Всі академічні права захищені.
         </p>
         <a
           href="#"
-          className="text-white/80 text-[13px] sm:text-[14px] font-body underline underline-offset-2 hover:text-white transition-colors"
+          className="text-white/80 sm:text-[14px] font-body hover:text-white text-[13px] underline underline-offset-2 transition-colors"
         >
           Політика конфіденційності
         </a>

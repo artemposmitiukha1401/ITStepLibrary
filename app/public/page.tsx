@@ -23,12 +23,12 @@ export default function PublicInfoPage() {
   ];
 
   return (
-    <div className="max-w-[1320px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-10">
-      <h1 className="text-blue-accent font-title font-bold text-[32px] sm:text-[40px] lg:text-[48px] uppercase mb-8">
+    <div className="px-4 sm:px-6 lg:px-8 py-10 mx-auto w-full max-w-330">
+      <h1 className="text-blue-accent font-title font-bold sm:text-[40px] lg:text-[48px] mb-8 text-[32px] uppercase">
         {'Публічна інформація'}
       </h1>
 
-      <div className="flex flex-col gap-4 text-[16px] sm:text-[17px] text-[#171717] font-body leading-relaxed">
+      <div className="gap-4 sm:text-[17px] font-body leading-relaxed flex flex-col text-[16px] text-[#171717]">
         <p>
           {'Відокремлений підрозділ «Фаховий коледж «IT СТЕП»» ПЗВО «Одеський технологічний університет «ШАГ»» надає публічну інформацію керуючись Законом України «Про доступ до публічної інформації», Законом України «Про вищу освіту» та Указом Президента України «Питання забезпечення органами виконавчої влади доступу до публічної інформації».'}
         </p>
@@ -43,13 +43,13 @@ export default function PublicInfoPage() {
 
         <p>{'Запит від осіб на отримання інформації подається у довільній формі. При цьому обов\'язково необхідно вказати:'}</p>
 
-        <ol className="flex flex-col gap-1 list-none">
+        <ol className="gap-1 flex list-none flex-col">
           <li>{'1. Ім\'я та прізвище особи, що робить запит, поштова адреса чи адреса електронної пошти, номер телефону;'}</li>
           <li>{'2. Опис інформації, яку бажано отримати (вид, назва, реквізити чи зміст документу, відносно якого зроблено запит);'}</li>
           <li>{'3. Підпис та дату.'}</li>
         </ol>
 
-        <div className="flex flex-col gap-1">
+        <div className="gap-1 flex flex-col">
           <p>{'Поштова адреса для надання інформаційного запиту:'}</p>
           <p>{'65023, м. Одеса, вул. Садова, 3, на конверті вказати «Публічна інформація»'}</p>
           <p>
@@ -63,16 +63,16 @@ export default function PublicInfoPage() {
           </p>
         </div>
 
-        <p className="font-semibold text-[17px] sm:text-[18px] mt-2">
+        <p className="font-semibold sm:text-[18px] mt-2 text-[17px]">
           {'Доступ до публічної інформації'}
         </p>
 
-        <div className="flex flex-col gap-4">
+        <div className="gap-4 flex flex-col">
           {links.map((link) => (
             <a 
               key={link.label}
               href={link.href}
-              className="text-indigo-800 underline underline-offset-2 hover:text-blue-accent transition-colors w-fit"
+              className="text-indigo-800 hover:text-blue-accent w-fit underline underline-offset-2 transition-colors"
             >
               {link.label}
             </a>

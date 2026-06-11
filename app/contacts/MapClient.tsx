@@ -8,7 +8,7 @@ const DynamicMap = dynamic<StepMapProps>(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-[500px] w-full items-center justify-center rounded-xl bg-gray-100 text-sm text-gray-400">
+      <div className="rounded-xl bg-gray-100 text-sm text-gray-400 flex h-[500px] w-full items-center justify-center">
         Loading map…
       </div>
     ),
@@ -26,7 +26,7 @@ export default function MapClient({ height = "500px" }: MapClientProps) {
     return (
       <div
         style={{ height }}
-        className="flex w-full items-center justify-center rounded-xl bg-gray-100 text-sm text-red-500"
+        className="rounded-xl bg-gray-100 text-sm text-red-500 flex w-full items-center justify-center"
       >
         Google Maps API key is missing.
       </div>

@@ -220,7 +220,7 @@ export default function DynamicMap({
   return (
     <div
       style={{ height }}
-      className={`relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 ${className}`}
+      className={`rounded-xl border-gray-200 bg-gray-100 relative w-full overflow-hidden border ${className}`}
     >
       <div
         ref={mapRef}
@@ -229,13 +229,13 @@ export default function DynamicMap({
       />
 
       {status === "loading" && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 text-sm text-gray-500">
+        <div className="inset-0 bg-gray-100 text-sm text-gray-500 absolute flex items-center justify-center">
           Loading Google Map…
         </div>
       )}
 
       {status === "error" && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 px-6 text-center text-sm text-red-500">
+        <div className="inset-0 bg-gray-100 px-6 text-sm text-red-500 absolute flex items-center justify-center text-center">
           {errorMessage}
         </div>
       )}

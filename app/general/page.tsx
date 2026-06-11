@@ -1,12 +1,12 @@
 {/* eslint-disable react/no-unescaped-entities */}
 export default function General(){
     return (
-        <div className="max-w-[1320px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-10">
-      <h1 className="text-blue-accent font-title font-bold text-[32px] sm:text-[40px] lg:text-[48px] uppercase mb-8">
+        <div className="px-4 sm:px-6 lg:px-8 py-10 mx-auto w-full max-w-330">
+      <h1 className="text-blue-accent font-title font-bold sm:text-[40px] lg:text-[48px] mb-8 text-[32px] uppercase">
         Історія, місія, візія
       </h1>
 
-      <div className="flex flex-col gap-10 text-[16px] sm:text-[18px] text-[#171717] font-body leading-relaxed">
+      <div className="gap-10 sm:text-[18px] font-body leading-relaxed flex flex-col text-[16px] text-[#171717]">
         <p>
           Вагомі багаторічні напрацювання компанії «IT STEP» з провадження неформальної та інституційної
           освіти в сфері інформаційних технологій, досвід підготовки фахівців-айтішників «Одеським

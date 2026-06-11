@@ -45,17 +45,17 @@ const DOCUMENTS = [
 
 export default function DocumentsPage() {
   return (
-    <div className="max-w-[1320px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-10">
-      <h1 className="text-blue-accent font-title font-bold text-[32px] sm:text-[40px] lg:text-[48px] uppercase mb-8">
+    <div className="px-4 sm:px-6 lg:px-8 py-10 mx-auto w-full max-w-[1320px]">
+      <h1 className="text-blue-accent font-title font-bold sm:text-[40px] lg:text-[48px] mb-8 text-[32px] uppercase">
         Нормативні документи
       </h1>
 
-      <div className="flex flex-col gap-4">
+      <div className="gap-4 flex flex-col">
         {DOCUMENTS.map((doc) => (
           <a
             key={doc.label}
             href={doc.href}
-            className="text-indigo-800 text-[18px] sm:text-[18px] font-body underline underline-offset-2 hover:text-blue-accent transition-colors w-fit leading-snug"
+            className="text-indigo-800 sm:text-[18px] font-body hover:text-blue-accent leading-snug w-fit text-[18px] underline underline-offset-2 transition-colors"
           >
             {doc.label}
           </a>

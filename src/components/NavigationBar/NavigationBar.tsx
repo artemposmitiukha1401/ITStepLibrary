@@ -43,14 +43,14 @@ const NavigationBar = () => {
     <nav className="relative">
 
     
-      <div className="hidden md:flex gap-10">
+      <div className="md:flex gap-10 hidden">
         {LINKS.map((item) => {
           if (item.dropdown) {
             return (
-              <div key={item.id} className="relative group">
+              <div key={item.id} className="group relative">
                 <Link
                   href={item.link}
-                  className="text-white font-title font-bold text-[20px] flex items-center gap-2"
+                  className="text-white font-title font-bold gap-2 flex items-center text-[20px]"
                 >
                   {item.name}
                   <svg
@@ -69,13 +69,13 @@ const NavigationBar = () => {
                     />
                   </svg>
                 </Link>
-                <div className="absolute left-0 top-full pt-4 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
-                  <div className="min-w-[240px] rounded-[13px] bg-white shadow-lg border border-[#E0E2F0] py-2">
+                <div className="left-0 pt-4 translate-y-2 group-hover:translate-y-0 invisible absolute top-full z-50 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+                  <div className="bg-white shadow-lg py-2 min-w-[240px] rounded-[13px] border border-[#E0E2F0]">
                     {item.dropdown.map((dropdownItem) => (
                       <Link
                         key={dropdownItem.id}
                         href={dropdownItem.link}
-                        className="block px-5 py-3 text-black rounded-[13px] font-body text-[16px] font-semibold hover:bg-blue-accent hover:text-white transition-colors"
+                        className="px-5 py-3 text-black font-body font-semibold hover:bg-blue-accent hover:text-white block rounded-[13px] text-[16px] transition-colors"
                       >
                         {dropdownItem.name}
                       </Link>
@@ -103,20 +103,20 @@ const NavigationBar = () => {
         onClick={() => setMenuOpen((v) => !v)}
         aria-label={menuOpen ? "Закрити меню" : "Відкрити меню"}
         aria-expanded={menuOpen}
-        className="md:hidden flex flex-col justify-center items-center w-12 h-12 gap-[6px] rounded-lg hover:bg-white/10 transition-colors"
+        className="md:hidden w-12 h-12 rounded-lg hover:bg-white/10 flex flex-col items-center justify-center gap-[6px] transition-colors"
       >
         <span
-          className={`block h-[3px] w-8 bg-white rounded-full transition-all duration-300 origin-center ${
+          className={`w-8 bg-white block h-[3px] origin-center rounded-full transition-all duration-300 ${
             menuOpen ? "rotate-45 translate-y-[9px]" : ""
           }`}
         />
         <span
-          className={`block h-[3px] w-8 bg-white rounded-full transition-all duration-300 ${
+          className={`w-8 bg-white block h-[3px] rounded-full transition-all duration-300 ${
             menuOpen ? "opacity-0 scale-x-0" : ""
           }`}
         />
         <span
-          className={`block h-[3px] w-8 bg-white rounded-full transition-all duration-300 origin-center ${
+          className={`w-8 bg-white block h-[3px] origin-center rounded-full transition-all duration-300 ${
             menuOpen ? "-rotate-45 -translate-y-[9px]" : ""
           }`}
         />
@@ -124,7 +124,7 @@ const NavigationBar = () => {
 
     
       <div
-        className={`md:hidden absolute right-0 top-[calc(100%+12px)] w-[280px] rounded-[13px] bg-white shadow-xl border border-[#E0E2F0] overflow-hidden transition-all duration-300 z-50 ${
+        className={`md:hidden right-0 bg-white shadow-xl absolute top-[calc(100%+12px)] z-50 w-[280px] overflow-hidden rounded-[13px] border border-[#E0E2F0] transition-all duration-300 ${
           menuOpen
             ? "opacity-100 visible translate-y-0"
             : "opacity-0 invisible -translate-y-2"
@@ -139,7 +139,7 @@ const NavigationBar = () => {
                   <button
                     type="button"
                     onClick={() => toggleDropdown(item.id)}
-                    className="w-full flex items-center justify-between px-5 py-3 text-black font-body text-[16px] font-semibold hover:bg-[#F2F5FF] transition-colors"
+                    className="px-5 py-3 text-black font-body font-semibold flex w-full items-center justify-between text-[16px] transition-colors hover:bg-[#F2F5FF]"
                   >
                     {item.name}
                 
@@ -148,7 +148,7 @@ const NavigationBar = () => {
                       height="20"
                       viewBox="0 0 24 24"
                       fill="none"
-                      className={`transition-transform duration-300 text-blue-accent ${
+                      className={`text-blue-accent transition-transform duration-300 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     >
@@ -168,13 +168,13 @@ const NavigationBar = () => {
                       isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="bg-[#F7F8FF] border-t border-[#E0E2F0]">
+                    <div className="border-t border-[#E0E2F0] bg-[#F7F8FF]">
                       {item.dropdown.map((dropdownItem) => (
                         <Link
                           key={dropdownItem.id}
                           href={dropdownItem.link}
                           onClick={closeAll}
-                          className="block pl-8 pr-5 py-2.5 text-[#444] font-body text-[15px] font-medium hover:bg-blue-accent hover:text-white transition-colors"
+                          className="pl-8 pr-5 py-2.5 font-body font-medium hover:bg-blue-accent hover:text-white block text-[15px] text-[#444] transition-colors"
                         >
                           {dropdownItem.name}
                         </Link>
@@ -190,7 +190,7 @@ const NavigationBar = () => {
                 key={item.id}
                 href={item.link}
                 onClick={closeAll}
-                className="block px-5 py-3 text-black font-body text-[16px] font-semibold hover:bg-[#F2F5FF] transition-colors"
+                className="px-5 py-3 text-black font-body font-semibold block text-[16px] transition-colors hover:bg-[#F2F5FF]"
               >
                 {item.name}
               </Link>

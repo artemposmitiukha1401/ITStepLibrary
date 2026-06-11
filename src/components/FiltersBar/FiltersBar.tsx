@@ -97,7 +97,7 @@ const ClearFiltersButton = ({ onClick }: { onClick: () => void }) => {
       type="button"
       onClick={handleClick}
       disabled={isSpinning}
-      className={`clear-btn h-14 w-full sm:w-auto sm:min-w-[280px] rounded-[10px] bg-[#BA1A1A] px-6 flex items-center justify-center gap-3 text-white font-body font-semibold text-[16px] sm:text-[18px] shrink-0 ${phase}`}
+      className={`clear-btn h-14 sm:w-auto sm:min-w-70 px-6 gap-3 text-white font-body font-semibold sm:text-[18px] flex w-full shrink-0 items-center justify-center rounded-[10px] bg-[#BA1A1A] text-[16px] ${phase}`}
     >
       {isSpinning && <span className="ripple" key={rippleKey} />}
 
@@ -142,8 +142,8 @@ const FiltersBar = () => {
   };
 
   return (
-    <div className="col-span-12 w-full h-fit border-2 border-blue-accent bg-white rounded-[13px] px-4 sm:px-5 py-4">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+    <div className="border-blue-accent bg-white px-4 sm:px-5 py-4 col-span-12 h-fit w-full rounded-[13px] border-2">
+      <div className="lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 grid grid-cols-2">
         {filters.map((filter) => (
           <FilterSelect
             key={filter.name}
@@ -155,9 +155,9 @@ const FiltersBar = () => {
         ))}
       </div>
 
-      <div className="mt-4 sm:mt-5 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-6">
-        <div className="relative flex-1 min-w-0">
-          <span className="absolute left-5 top-1/2 -translate-y-1/2 text-[#7A7A7A]">
+      <div className="mt-4 sm:mt-5 sm:flex-row sm:items-center gap-3 sm:gap-6 flex flex-col items-stretch">
+        <div className="min-w-0 relative flex-1">
+          <span className="left-5 absolute top-1/2 -translate-y-1/2 text-[#7A7A7A]">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path
                 d="M21 21L16.65 16.65M18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11Z"
@@ -174,7 +174,7 @@ const FiltersBar = () => {
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
             placeholder="Пошук за назвою, автором або описом..."
-            className="w-full h-14 focus:border-blue-accent transition-all duration-300 ease-in-out rounded-[10px] border-2 border-[#C6C8DD] bg-white pl-14 pr-5 text-[14px] sm:text-[15px] font-body text-[#171717] outline-none placeholder:text-[#5F5F5F]"
+            className="h-14 focus:border-blue-accent ease-in-out bg-white pl-14 pr-5 sm:text-[15px] font-body w-full rounded-[10px] border-2 border-[#C6C8DD] text-[14px] text-[#171717] transition-all duration-300 outline-none placeholder:text-[#5F5F5F]"
           />
         </div>
 
